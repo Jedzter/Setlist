@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Brendon's List</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="songs.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <form onsubmit = "return false"> Sort by Genre: 
+                <select id="sort_choices"> 
+                    <option id="Default">All Genres</option>
+                    <option id="Rap">Rap</option>
+                    <option id="Pop">Pop</option>
+                    <option id="RMB">RMB</option>
+                </select>
+            <button type="submit" id="sort" value="Filter" >Filter By Genre</button>
+        </form>
+
+        
+
+        <div id="playList"></div>
+        <script language="javascript">
+
+      
+        $(document).ready(sort(0));
+        var all_genres = ["All genres", "Rap", "Pop", "RMB"];
+        // Checks for genre
+
+        function genreType(check_genre, arr) {
+
+            if (check_genre == "All genres"){
+                return true;
+            }
+
+            for (var j = 0; j < arr.length; j++) 
+            {
+                if (check_genre == arr[j])
+                    return true;
+            }
+            
+            return false;
+        }
+
+        //sort funtion to filter through specified genre 
+        function sort(genresort) {
+            $.getJSON('song.json', function(info) 
+            {
+                info_str = JSON.stringify(info);
+                info_arr = JSON.parse(info_str);
+                info_write = "";
+        
+
+                // writing data into html that will later be called into a div to be populated
+                for(var i = 0; i < 10; i++) {    
+                    if (genreType(all_genres[genresort], info_arr[i].genre)) {
+                        info_write += "<div class='info' style='font-weight: 800; font-size: 25px;'>" + info_arr[i].title + "</div>";
+                        info_write += "<div  class='info''> Artists: " + info_arr[i].artists + "<br/>";
+                        info_write += "Genre: ";
+                     
+                        
+                        for(var k = 0; k < info_arr[i].genre.length; k++)
+                         {
+                            info_write += info_arr[i].genre[k];
+                                
+                        }
+                        info_write += "<br/>";
+                        info_write += "Year: " + info_arr[i].year_released + "</div>";
+                        info_write += "<hr>";
+                    }
+                }
+                document.getElementById("playList").innerHTML = info_write;
+             }
+             )
+            }
+
+    </script>   
+
+
+<script language = "javascript">
+    $('#sort').on('click', function() {
+
+        if($("#sort_choices").prop('selectedIndex') == 0)
+        {
+            sort(0);
+        }
+           
+        else{
+            sort($("#sort_choices").prop('selectedIndex'));
+        }
+            
+    });
+</script>
+
+    </body>
+</html>

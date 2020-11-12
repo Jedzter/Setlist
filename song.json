@@ -1,0 +1,104 @@
+
+[
+
+    {
+
+            "title": "How do you sleep?",
+            "artists": "Sam Smith",
+            "genre": ["Pop"],
+            "year_released": "2017"
+
+        
+
+    },
+    
+
+
+    {
+
+            "title": "Intentions",
+            "artists": "Justin Bieber",
+            "genre": ["Pop"],
+            "year_released": "2020"
+
+    },
+
+    {
+
+            "title": "Beautiful People",
+            "artists": "Ed Sheeran",
+            "genre": ["Pop"],
+            "year_released": "2019"
+    },
+
+    {
+            "title": "Sad Still",
+            "artists": "Quinn XCII",
+            "genre": ["Rap"],
+            "year_released": "2019"
+
+    },
+
+    {
+
+            "title": "Just Imagine It",
+            "artists": "MKTO",
+            "genre": ["RMB"],
+            "year_released": "2015"
+
+    },
+
+
+    {
+
+
+        "title": "Entertainer",
+        "artists": "Zayn",
+        "genre": ["Pop"],
+        "year_released": "2017"
+
+
+    },
+
+    {
+
+        "title": "Lucid Dream",
+        "artists": "Juice WRLD",
+        "genre": ["Rap"],
+        "year_released": "2018"
+
+
+    },
+
+    {
+
+        "title": "Level Up",
+        "artists": "Ciara",
+        "genre": ["Pop"],
+        "year_released": "2018"
+
+    },
+
+    {
+
+
+        "title": "Savage Love",
+        "artists": "Jason Derulo",
+        "genre": ["Pop"],
+        "year_released": "2020"
+
+
+    },
+
+    {
+
+        "title": "Savage",
+        "artists": "Megan Thee Stallion",
+        "genre": ["Rap"],
+        "year_released": "2020"
+
+
+    }
+
+]
+

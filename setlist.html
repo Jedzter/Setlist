@@ -51,29 +51,29 @@
             {
                 info_str = JSON.stringify(info);
                 info_arr = JSON.parse(info_str);
-                info_write = "";
+                infodata = "";
         
              
                 for(var i = 0; i < 10; i++) {    
                     if (genreType(all_genres[genresort], info_arr[i].genre)) {
                      
              
-                        info_write += "<div class='info'>" + info_arr[i].title + "</div>";
-                        info_write += "<div  class='info''> Artists: " + info_arr[i].artists + "<br/>";
-                        info_write += "Genre: ";
+                        infodata += "<div class='info'>" + info_arr[i].title + "</div>";
+                        infodata += "<div  class='info''> Artists: " + info_arr[i].artists + "<br/>";
+                        infodata += "Genre: ";
                      
                         
                         for(var k = 0; k < info_arr[i].genre.length; k++)
                          {
-                            info_write += info_arr[i].genre[k];
+                            info += info_arr[i].genre[k];
                                 
                         }
-                        info_write += "<br/>";
-                        info_write += "Year: " + info_arr[i].year_released + "</div>";
-                        info_write += "<hr>";
+                        infodata += "<br/>";
+                        infodata += "Year: " + info_arr[i].year_released + "</div>";
+                        infodata += "<hr>";
                     }
                 }
-                document.getElementById("playList").innerHTML = info_write;
+                document.getElementById("playList").innerHTML = infodata;
              }
              )
             }

@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
+ 
 <html>
     <head>
         
@@ -18,23 +19,23 @@
                 </select>
             <button type="submit" id="sort" value="Filter" >Filter By Genre</button>
         </form>
-
+ 
         
-
+ 
         <div id="playList"></div>
         <script language="javascript">
-
+ 
       
         $(document).ready(sort(0));
         var all_genres = ["All genres", "Rap", "Pop", "RMB"];
-       
-
+     
+ 
         function genreType(check_genre, arr) {
-
+ 
             if (check_genre == "All genres"){
                 return true;
             }
-
+ 
             for (var j = 0; j < arr.length; j++) 
             {
                 if (check_genre == arr[j])
@@ -43,6 +44,8 @@
             
             return false;
         }
+ 
+    
         function sort(genresort) {
             $.getJSON('setlist.json', function(info) 
             {
@@ -50,12 +53,13 @@
                 info_arr = JSON.parse(info_str);
                 info_write = "";
         
+             
                 for(var i = 0; i < 10; i++) {    
                     if (genreType(all_genres[genresort], info_arr[i].genre)) {
                         info_write += "<div class='info' style='font-weight: 800; font-size: 25px;'>" + info_arr[i].title + "</div>";
                         info_write += "<div  class='info''> Artists: " + info_arr[i].artists + "<br/>";
                         info_write += "Genre: ";
-                   
+                     
                         
                         for(var k = 0; k < info_arr[i].genre.length; k++)
                          {
@@ -71,13 +75,13 @@
              }
              )
             }
-
+ 
     </script>   
-
-
+ 
+ 
 <script language = "javascript">
     $('#sort').on('click', function() {
-
+ 
         if($("#sort_choices").prop('selectedIndex') == 0)
         {
             sort(0);
@@ -89,6 +93,6 @@
             
     });
 </script>
-
+ 
     </body>
 </html>

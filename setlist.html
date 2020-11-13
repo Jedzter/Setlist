@@ -30,15 +30,15 @@
         var all_genres = ["All genres", "Rap", "Pop", "RMB"];
      
  
-        function genreType(check_genre, arr) {
+        function SpecificGenre(findgenre, arr) {
  
-            if (check_genre == "All genres"){
+            if (findgenre == "All genres"){
                 return true;
             }
  
             for (var j = 0; j < arr.length; j++) 
             {
-                if (check_genre == arr[j])
+                if (findgenre == arr[j])
                     return true;
             }
             
@@ -55,7 +55,7 @@
         
              
                 for(var i = 0; i < 10; i++) {    
-                    if (genreType(all_genres[genresort], info_arr[i].genre)) {
+                    if (SpecificGenre(all_genres[genresort], info_arr[i].genre)) {
                      
              
                         infodata += "<div class='info'>" + info_arr[i].title + "</div>";
@@ -65,7 +65,7 @@
                         
                         for(var k = 0; k < info_arr[i].genre.length; k++)
                          {
-                            info += info_arr[i].genre[k];
+                            infodata += info_arr[i].genre[k];
                                 
                         }
                         infodata += "<br/>";
@@ -98,3 +98,4 @@
  
     </body>
 </html>
+

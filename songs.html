@@ -43,8 +43,6 @@
             
             return false;
         }
-
-        //sort funtion to filter through specified genre 
         function sort(genresort) {
             $.getJSON('song.json', function(info) 
             {
@@ -59,7 +57,7 @@
                         info_write += "<div class='info' style='font-weight: 800; font-size: 25px;'>" + info_arr[i].title + "</div>";
                         info_write += "<div  class='info''> Artists: " + info_arr[i].artists + "<br/>";
                         info_write += "Genre: ";
-                     
+                   
                         
                         for(var k = 0; k < info_arr[i].genre.length; k++)
                          {

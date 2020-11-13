@@ -27,7 +27,7 @@
       
         $(document).ready(sort(0));
         var all_genres = ["All genres", "Rap", "Pop", "RMB"];
-        // Checks for genre
+     
 
         function genreType(check_genre, arr) {
 
@@ -43,8 +43,6 @@
             
             return false;
         }
-
-        //sort funtion to filter through specified genre 
         function sort(genresort) {
             $.getJSON('song.json', function(info) 
             {
